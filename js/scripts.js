@@ -1,5 +1,17 @@
-let pokemonList = [];
-
-pokemonList[0] = {name: Bulbasaur, number: 1, type: [grass, poison] };
-pokemonList[1] = {name: Ivysaur, number: 2, type: [grass, poison]};
-pokemonList[2] = {name: Venusaur, number: 3, type: [grass, poison]};
+let pokemonList = [
+  {
+     name: 'bulbasaur',
+     height: 0.7,
+     type: ['grass', 'poison'],
+  },
+  {
+     name: 'ivysaur',
+     height: 1,
+     type: ['fire', 'flying'],
+  },
+  {
+     name: 'venusaur',
+     height: 2,
+     type: 'water',
+  },
+];
