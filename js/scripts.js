@@ -1,9 +1,5 @@
-//alert Hello World
-alert('Hello World');
+let pokemonList = [];
 
-//favorite food variable
-let favoriteFood = 'salmon';
-
-//document write favorite food
-document.write(favoriteFood);
-
+pokemonList[0] = {name: Bulbasaur, number: 1, type: [grass, poison] };
+pokemonList[1] = {name: Ivysaur, number: 2, type: [grass, poison]};
+pokemonList[2] = {name: Venusaur, number: 3, type: [grass, poison]};
