@@ -23,6 +23,9 @@ let pokemonRepository = (function() {
     }
 
     function add() {
+      // let correctKeys = ['name', 'height', 'type']
+      // let objectKeys = Object.keys(pokemon);
+      // if (typeof pokemon === 'object' && )
       pokemonList.push(pokemon);
     }
 
