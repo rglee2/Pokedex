@@ -22,11 +22,15 @@ let pokemonRepository = (function() {
       return pokemonList;
     }
 
-    function add() {
-      // let correctKeys = ['name', 'height', 'type']
-      // let objectKeys = Object.keys(pokemon);
-      // if (typeof pokemon === 'object' && )
+    function add(pokemon) {
+      let correctKeys = ['name', 'height', 'type']
+      let objectKeys = Object.keys(pokemon);
+      if (typeof pokemon === 'object'
+        && correctKeys[0] === objectKeys[0]
+        && correctKeys[1] === objectKeys[1]
+        && correctKeys[2] === objectKeys[2] ) {
       pokemonList.push(pokemon);
+      }
     }
 
     function addListItem(pokemon) {
@@ -60,9 +64,10 @@ let pokemonRepository = (function() {
 // }
 // }
 
+//testing add function
+pokemonRepository.add({name: 'pikachu', height: '1.2', type: 'thunder'})
+
 //forEach Condition to List Pokemon
 pokemonRepository.getAll().forEach(function(pokemon) {
-  pokemonRepository.getListItem(pokemon);
+  pokemonRepository.addListItem(pokemon);
 });
-//List Pokemon
-// pokemonRepository.getAll().forEach(pokemonInfo);
