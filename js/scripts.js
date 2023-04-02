@@ -67,7 +67,10 @@ let pokemonRepository = (function() {
 //testing add function
 pokemonRepository.add({name: 'pikachu', height: '1.2', type: 'thunder'})
 
-//forEach Condition to List Pokemon
+//forEach Condition to List Pokemon (internal anonymous function)
 pokemonRepository.getAll().forEach(function(pokemon) {
   pokemonRepository.addListItem(pokemon);
 });
+
+//arrow function forEach
+// pokemonRepository.getAll().forEach(pokemon => pokemonRepository.addListItem(pokemon));
