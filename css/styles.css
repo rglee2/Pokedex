@@ -1,5 +1,6 @@
 .pokemonButton {
   background-color: red;
+  font-size: larger;
   color: white;
   width: 200px;
   height: 200px;
@@ -7,5 +8,10 @@
 }
 
 .pokemonButton:hover {
-  
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.pokemon-list {
+  list-style-type: none;
 }
