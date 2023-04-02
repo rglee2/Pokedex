@@ -32,6 +32,8 @@ let pokemonRepository = (function() {
       pokemonList.push(pokemon);
       }
     }
+    // Bonus Task 1.5.3 Filtering By Name
+    // function findByName(name) {}
 
     function addListItem(pokemon) {
       let pokemonListItems = document.querySelector(".pokemon-list");
@@ -44,10 +46,12 @@ let pokemonRepository = (function() {
     }
 
 
+
+
     return {
       getAll: getAll,
       add: add,
-      addListItem: addListItem
+      addListItem: addListItem,
     };
 })();
 
@@ -74,3 +78,4 @@ pokemonRepository.getAll().forEach(function(pokemon) {
 
 //arrow function forEach
 // pokemonRepository.getAll().forEach(pokemon => pokemonRepository.addListItem(pokemon));
+
