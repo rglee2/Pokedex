@@ -86,3 +86,11 @@
 #modal-container {
   display: none;
 }
+
+.btn-search {
+  color: red;
+}
+
+.main {
+  padding-top: 80px;
+}

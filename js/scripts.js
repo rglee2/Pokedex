@@ -25,8 +25,10 @@ let pokemonRepository = (function() {
       let listItem = document.createElement("li");                             
       let button = document.createElement("button");                          
       button.innerText = pokemon.name;                                        
-      button.classList.add("pokemonButton");               
-      listItem.appendChild(button);                              
+      button.classList.add("pokemonButton");     
+      button.classList.add("btn");         
+      listItem.appendChild(button);
+      listItem.classList.add("list-item-group");                              
       pokemonListItems.appendChild(listItem);
       button.addEventListener('click', function() {
         showDetails(pokemon);
@@ -99,7 +101,7 @@ let pokemonRepository = (function() {
         return response.json();
       }).then(function(json) {
         json.results.forEach(function(item) {
-          let pokemon = {
+          let pokemon = { 
             name: item.name,
             detailsUrl: item.url
           };
@@ -118,6 +120,7 @@ let pokemonRepository = (function() {
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
         item.types = details.types;
+        item.abilities = details.abilities;
       }).catch(function(e) {
         console.error(e);
       });
