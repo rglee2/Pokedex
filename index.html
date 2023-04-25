@@ -8,20 +8,39 @@
   <link rel="stylesheet" href="css/styles.css">
   <title>Pokedex</title>
 </head>
+
 <body>
-  <header class="fixed-top">
+  <header>
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="index.html">Pokemon</a>
-      <form class="form-inline my-2 my-lg-0" aria-controls="pokemon-list">
-        <input class="form-control mr-sm-2" type="search" placeholder="Pokemon Name" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <form class="form-inline">
+        <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search Pokemon" aria-label="Search">
       </form>
     </nav>
   </header>
-  <main class="container-fluid">
-    <ul class="list-group, pokemon-list"></ul>
-    <div id="modal-container"></div>
-  </main>
+  <ul class="list-group, pokemon-list"></ul>
+
+    <!-- Modal -->
+  <div class="modal fade" id="pokemon-modal" tabindex="-1" role="dialog" aria-labelledby="pokemon-information" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h5 class="modal-title" id="pokemon-information">Pokemon</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <img class="img-fluid sprite-image" alt="pokemon-image">
+          <p class="pokemon-height"></p>  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

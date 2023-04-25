@@ -1,4 +1,4 @@
-.pokemonButton {
+/* .pokemonButton {
   position: relative;
   width: 150px;
   height: 150px;
@@ -11,7 +11,7 @@
   margin: 5px;
   display:inline-block;
   float: left;
-}
+} */
 
 /* Animation */
 @keyframes shake {
@@ -34,7 +34,7 @@
   list-style-type: none;
 }
 
-#modal-container.is-visible {
+/* #modal-container.is-visible {
   position: fixed;
   padding: 20px;
   box-sizing: border-box;
@@ -85,7 +85,7 @@
 
 #modal-container {
   display: none;
-}
+} */
 
 .btn-search {
   color: red;
