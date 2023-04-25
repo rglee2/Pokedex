@@ -29,12 +29,13 @@ let pokemonRepository = (function() {
       button.classList.add("pokemonButton");     
       button.classList.add("btn");
       button.setAttribute('data-toggle', 'modal');
-      button.setAttribute('data-target', '#pokemon-modal');        
+      button.setAttribute('data-target', '#pokemonModal');        
       listItem.appendChild(button);
       listItem.classList.add('list-group-item');                              
       pokemonListItems.appendChild(listItem);
       button.addEventListener('click', function() {
         showDetails(pokemon);
+        showModal(pokemon);
       });
     }
 
@@ -44,11 +45,12 @@ let pokemonRepository = (function() {
 
     //BootStrap Modal
     function showModal(pokemon) {
+      
       let modalTitle = document.querySelector('.modal-title');
       modalTitle.innerText = pokemon.name;
 
       let pokemonImage = document.querySelector('.sprite-image');
-      pokemonImage.src = item.imageUrl;
+      pokemonImage.src = pokemon.imageUrl;
 
       let pokemonHeight = document.querySelector('.pokemon-height');
       pokemonHeight.innerText = ('Height ' + pokemon.height);
@@ -140,7 +142,6 @@ let pokemonRepository = (function() {
         item.height = details.height;
         item.types = details.types;
         item.abilities = details.abilities;
-        showModal(item);
       }).catch(function(e) {
         console.error(e);
       });
