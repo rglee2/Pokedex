@@ -2,7 +2,7 @@
 let pokemonRepository = (function() {
   let pokemonList = [];
   let apiURL = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  // let searchInput = document.querySelector("#search-input");
+  let searchInput = document.querySelector("#search-input");
   
     function getAll() {
       return pokemonList;
@@ -18,8 +18,7 @@ let pokemonRepository = (function() {
       pokemonList.push(pokemon);
       }
     }
-    // Bonus Task 1.5.3 Filtering By Name
-    // function findByName(name) {}
+    
 
     function addListItem(pokemon) {
       let pokemonListItems = document.querySelector(".pokemon-list");          
@@ -35,12 +34,13 @@ let pokemonRepository = (function() {
       pokemonListItems.appendChild(listItem);
       button.addEventListener('click', function() {
         showDetails(pokemon);
-        showModal(pokemon);
       });
     }
 
     function showDetails(pokemon) {
-      loadDetails(pokemon)
+      loadDetails(pokemon).then(function () {
+        showModal(pokemon)
+      });
     }
 
     //BootStrap Modal
@@ -56,9 +56,24 @@ let pokemonRepository = (function() {
       pokemonHeight.innerText = ('Height ' + pokemon.height);
     }
 
-    // function filterSearch(searchInput) {
-    //   let filterValue = searchInput.value.toLowerCase();
-    // }
+    function filterSearch(searchInput) {
+      let filterValue = searchInput.value.toLowerCase();
+
+      let filteredPokemon = pokemonList.filter(function(pokemon) {
+        return pokemon.name.toLowerCase().indexOf(filterValue) > -1;
+      });
+
+      let pokemonListItems = document.querySelector('.pokemon-list');
+      pokemonListItems.innerHTML = "";
+      filteredPokemon.forEach(function (pokemon) {
+        pokemonRepository.addListItem(pokemon);
+      });
+    }
+
+    searchInput.addEventListener('input', function() {
+      pokemonRepository.filterSearch(searchInput);
+    });
+
 
 
 
@@ -156,6 +171,7 @@ let pokemonRepository = (function() {
       loadList: loadList,
       loadDetails: loadDetails,
       showModal: showModal,
+      filterSearch: filterSearch,
     };
 })();
 
